@@ -7,9 +7,8 @@ namespace RaktarProjekt
     {
         static void Main(string[] args)
         {
-            // Osztály példányosítása
+            
             Warehouse raktar = new Warehouse();
-
             
             raktar.HozzaadTobb(
                 new Product("Alaplap", 50000), 
@@ -40,7 +39,7 @@ namespace RaktarProjekt
             Console.WriteLine($"\nTermékek száma: {raktar.KeszletDarabszam()}");
             raktar.LegfelsoMegtekintese();
 
-            // Szálak indítása a Mutex-es művelet teszteléséhez
+           
             Console.WriteLine("\n--- Eladások indítása két szálon ---");
             Thread t1 = new Thread(raktar.TermekKivetele);
             Thread t2 = new Thread(raktar.TermekKivetele);
